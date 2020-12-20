@@ -6,7 +6,7 @@ using System.Linq;
 
 public record Input
 {
-    static Regex RuleParser = new Regex("(?<rule>(?<ruleName>\\w+):\\s(?<range1Start>\\d+)-(?<range1End>\\d+)\\sor\\s(?<range2Start>\\d+)-(?<range2End>\\d+))");
+    static Regex RuleParser = new Regex("(?<rule>(?<ruleName>(\\w|\\s)+):\\s(?<range1Start>\\d+)-(?<range1End>\\d+)\\sor\\s(?<range2Start>\\d+)-(?<range2End>\\d+))");
 
     public List<Rule> Rules { get; } = new List<Rule>();
     public int[] MyTicketData { get; }
