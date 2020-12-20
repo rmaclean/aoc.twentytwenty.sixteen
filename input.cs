@@ -70,8 +70,6 @@ public record Rule(string name, Range range1, Range range2)
 
 public record Range(int start, int end)
 {
-    public bool? Unique { get; set; } = null;
-
     public bool Between(int i) => i >= this.start && i <= this.end;
 
     public bool Overlaps(Range other) => Between(other.start) || Between(other.end);
